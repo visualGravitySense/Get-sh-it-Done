@@ -119,3 +119,108 @@
 ---
 
 This roadmap ensures a step-by-step development of the GSD system, from basic task management integration to a fully featured productivity tool. It aims to streamline workflows, combine the strengths of Obsidian and React Vite, and improve overall user productivity with the help of Telegram real-time notifications.
+
+
+### Interfaces Architecture for Get (Sh)it Done (GSD)
+
+Let’s start by designing the interfaces for managing the GSD system across the following components:
+
+1. **React Vite Frontend (Task Management UI)**  
+2. **Obsidian Plugin Interface**  
+3. **Telegram Bot Interface**
+
+---
+
+### 1. **React Vite Frontend**
+The primary user interface for task management.
+
+**Key Sections:**
+- **Dashboard**  
+  - View tasks for today/week/month.  
+  - Productivity statistics (e.g., completed tasks).  
+  - Notifications for missed or upcoming deadlines.  
+
+- **Task List**  
+  - Filters: by tags, projects, priority, deadlines.  
+  - Options to edit, delete, and mark tasks as complete.  
+  - "Quick Add" button for adding tasks rapidly.  
+
+- **Calendar**  
+  - Visualize tasks on a calendar (daily/weekly view).  
+  - Synchronization with external calendars.  
+
+- **Settings**  
+  - Manage Telegram bot integration.  
+  - Themes (light/dark mode).  
+  - Integrations (e.g., Google Calendar, Trello).  
+
+---
+
+**UI Elements:**
+- **Task Creation Form**  
+  Fields: Title, Tags, Deadline, Priority, Description, Project.  
+  Buttons: "Save", "Cancel".  
+
+- **Task Card**  
+  Displays:
+  - Title, deadline, status.  
+  - Tags (chips).  
+  - Action buttons: Edit, Delete, Mark as Complete.  
+
+---
+
+### 2. **Obsidian Plugin**
+
+**Core Interface Elements:**
+- **Task Panel**  
+  Displays a list of tasks with checkboxes and tags.  
+
+- **Commands and Context Menu:**  
+  - Add a task.  
+  - Synchronize tasks.  
+  - Plugin settings (e.g., Telegram integration).  
+
+**Markdown Syntax:**
+- Tasks are represented using standard checkboxes:
+  ```markdown
+  - [ ] Write GSD system plan
+  - [x] Complete React UI design
+  ```
+
+---
+
+### 3. **Telegram Bot Interface**
+
+**Core Commands:**
+- `/tasks` — View a list of tasks.  
+- `/add` — Quickly add a task (using inline mode).  
+- `/remind` — Set a reminder.  
+- `/done` — Mark a task as complete.  
+- `/sync` — Force synchronization.  
+
+**Sample Interaction:**
+```
+/tasks
+📂 Your tasks for today:
+1. [ ] Complete the presentation (due: 20.12.2024)
+2. [ ] Call with the client (due: 21.12.2024)
+/done 1
+✅ Task "Complete the presentation" has been marked as done!
+```
+
+---
+
+### Interface Design (Anti Design Style)
+
+- **React UI:**  
+  Minimalist forms and buttons with bold typography.  
+  Color accents to represent task priorities.  
+
+- **Obsidian Plugin:**  
+  Seamless integration with Obsidian’s native style.  
+  Simple and intuitive interaction with Markdown tasks.  
+
+- **Telegram Bot:**  
+  Focused on concise commands and clear responses.  
+
+---
